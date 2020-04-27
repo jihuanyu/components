@@ -2,14 +2,14 @@
   <div>
     <input
       ref="input"
-      :disabled="disabled"
+      :disabled="disabled||$parent.$parent.disabled"
       :type="type"
-      :size="size"
+      :size="size||$parent.$parent.size"
       :placeholder="placeholder"
       :value="currentValue"
       @input="handleInput"
       @blur="handleBlur"
-      :class="size === 'default' ? 'default' : 'big'"
+      :class="size == 'big'?'big':'default'"
     />
   </div>
 </template>
@@ -23,7 +23,6 @@ export default {
     size: { type: String, default: "default" },
     disabled: { type: Boolean, default: false },
     placeholder: { type: String },
-    max: { type: Number },
     value: { type: String }
   },
   watch: {
@@ -33,6 +32,9 @@ export default {
   },
   data() {
     return { currentValue: this.value, id: this.label };
+  },
+  created(){
+    this.size = this.$parent.$parent.size
   },
   mounted() {
     if (this.$parent.labelFor) this.$refs.input.id = this.$parent.labelFor;
@@ -51,29 +53,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-textarea {
-  box-sizing: border-box;
-  width: 280px;
-  height: 72px;
-  border-radius: 3px;
-  border: 1px solid rgba(48, 48, 48, 1);
-  padding: 7px 12px;
-  background: #303030;
-  resize: none;
-}
-textarea:hover {
-  border-color: rgba(67, 67, 67, 1);
-}
-textarea:focus {
-  outline: none;
-  border-radius: 3px;
-  border: 2px solid rgba(67, 67, 67, 1);
-  padding: 6px 10px;
-}
-textarea[disabled] {
-  background: rgba(20, 21, 22, 1);
-  border: 1px solid rgba(29, 29, 29, 1);
-}
 .default {
   width: 280px;
   height: 32px;

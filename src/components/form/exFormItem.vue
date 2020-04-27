@@ -1,8 +1,13 @@
 <template>
-  <div>
-    <label :for="labelFor" v-if="label">{{ label }}</label>
-    <slot></slot>
-    <div v-if="isShowMes" class="message">{{ message }}</div>
+  <div :class="labelPosition?labelPosition:$parent.labelPosition">
+    <div class="label" :style="labelWidth?`width:${labelWidth}px`:`width:${$parent.labelWidth}px`">
+     <label :for="labelFor" v-if="label">{{label}}</label>
+    </div>
+    <div>
+      <slot></slot>
+      <span v-if="isShowMes" class="message">{{ message }}</span>
+    </div>
+
   </div>
 </template>
 <script>
@@ -14,7 +19,9 @@ export default {
   inject: ["form"],
   props: {
     label: { type: String, default: "" },
-    prop: { type: String }
+    prop: { type: String },
+    labelPosition: { type: String, default: "top" },
+    labelWidth: { type: String },
   },
   data() {
     return {
@@ -88,8 +95,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.label {
+  display: block;
+  width: 280px;
+  height: 22px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 22px;
+}
 .message {
-  font-size: 12px;
-  color: red;
+    line-height:20px;
+    font-size: 12px;
+    color:rgba(214,69,60,1);
+    font-family:PingFangSC-Regular,PingFang SC;
+}
+.left{
+  display: flex;
+  .label{
+    padding-left: 20px;
+    width: 80px;
+  }
+}
+.right{
+  display: flex;
+  text-align: right;
+  .label{
+    padding-right: 20px;
+    width: 80px;
+  }
 }
 </style>

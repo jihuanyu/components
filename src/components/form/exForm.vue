@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot></slot>
+    <slot class="111" ></slot>
   </div>
 </template>
 <script>
@@ -10,9 +10,12 @@ export default {
     return { fields: [] };
   },
   props: {
-    labelPosition: { type: String, default: "top" },
     model: { type: Object },
-    rules: { type: Object }
+    rules: { type: Object },
+    size: { type: String, default: 'default' },
+    disabled: { type: Boolean, default: false },
+    labelPosition: { type: String, default: "top" },
+    labelWidth: { type: String },
   },
   provide() {
     return { form: this };
