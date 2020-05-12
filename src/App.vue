@@ -6,7 +6,7 @@
 
 <style lang="scss">
 body {
-  background: #111213;
+  background: #fff;
 }
 * {
   box-sizing: border-box;
