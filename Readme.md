@@ -44,3 +44,25 @@
 |  focus   |        在 Input 获得焦点时触发         | (event: Event) |
 |  change  | 仅在输入框失去焦点或用户按下回车时触发 | (value: string | number) |
 |  input   |         在 Input 值改变时触发          | (value: string | number) |
+
+#### button
+
+- button Attributes
+
+|名称|说明|类型|可选值|默认值|
+| :---------: | :------------------------------------: | :-------------: | :--------------------------------------: | :-----: |
+|type|类型|string|submit/cancel|—|
+
+
+#### dialog
+
+- dialog Attributes
+
+|名称|说明|类型|可选值|默认值|
+| :---------: | :------------------------------------: | :-------------: | :--------------------------------------: | :-----: |
+|show|是否显示 Dialog|boolean|—|false|
+|title|Dialog 的标题|string|—|—|
+|show-close|是否展示右上角关闭图标|boolean|—|true|
+|showCancel|是否展示底部按钮|boolean|—|true|
+|cancelText|按钮的文案|string|—|取消|
+|confirmText|按钮的文案|string|—|确定|

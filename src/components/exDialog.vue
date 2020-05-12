@@ -8,6 +8,7 @@
         <section v-if="title" class="header">
           {{ title }}
           <img
+            v-if="showClose"
             src="@/assets/icon/dialog_close.png"
             alt
             class="dialog_close"
@@ -47,6 +48,10 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    showClose: {
+      type: Boolean,
+      default: true
     },
     showCancel: {
       typs: Boolean,
