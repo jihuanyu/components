@@ -45,7 +45,7 @@
 |  change  | 仅在输入框失去焦点或用户按下回车时触发 | (value: string | number) |
 |  input   |         在 Input 值改变时触发          | (value: string | number) |
 
-#### button
+#### exButton
 
 - button Attributes
 
@@ -54,7 +54,7 @@
 |type|类型|string|submit/cancel|—|
 
 
-#### dialog
+#### exDialog
 
 - dialog Attributes
 
@@ -66,3 +66,13 @@
 |showCancel|是否展示底部按钮|boolean|—|true|
 |cancelText|按钮的文案|string|—|取消|
 |confirmText|按钮的文案|string|—|确定|
+
+#### exMessage
+
+- message Options
+
+|名称|说明|类型|可选值|默认值|
+| :---------: | :------------------------------------: | :-------------: | :--------------------------------------: | :-----: |
+|message|	消息文字|string|—|—|
+|type|	主题|string|success/warning/info/error|—|
+

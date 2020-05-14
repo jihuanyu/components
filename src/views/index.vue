@@ -107,25 +107,25 @@ export default {
       this.showDialog = false;
     },
     success() {
-      this.$message({
+      this.$exMessage({
         type: "success",
         message: "这是一条成功的信息"
       });
     },
     error() {
-      this.$message({
+      this.$exMessage({
         type: "error",
         message: "这是一条错误的信息"
       });
     },
     warn() {
-      this.$message({
+      this.$exMessage({
         type: "warn",
         message: "这是一条警告的信息"
       });
     },
     info() {
-      this.$message({
+      this.$exMessage({
         type: "info",
         message: "这是一条信息提示"
       });

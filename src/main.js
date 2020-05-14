@@ -5,7 +5,7 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 import Message from "@/components/message";
-Vue.prototype.$message = Message;
+Vue.prototype.$exMessage = Message;
 
 new Vue({
   router,
