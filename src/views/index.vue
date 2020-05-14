@@ -19,10 +19,13 @@
         </ex-form-item>
       </ex-form>
     </div>
-
-    <ex-button type="cancel">按钮</ex-button>
+    <!-- 按钮 -->
+    <ex-button type="cancel" @click="success">success</ex-button>
+    <ex-button type="cancel" @click="info">info</ex-button>
+    <ex-button type="cancel" @click="error">error</ex-button>
+    <ex-button type="cancel" @click="warn">warn</ex-button>
     <ex-button @click="handleClick" type="submit">打开弹框</ex-button>
-
+    <!-- 弹框 -->
     <ex-dialog
       :show="showDialog"
       @confirm="confirm"
@@ -30,7 +33,7 @@
       @before-close="before_close"
       :title="'新标题'"
     >
-      <!-- <ex-form ref="form" :model="formData" :rules="rules">
+      <ex-form ref="form" :model="formData" :rules="rules">
         <ex-form-item label="名称" prop="name" labelPosition="left">
           <ex-input type="text" v-model="formData.name"></ex-input>
         </ex-form-item>
@@ -46,7 +49,7 @@
         <ex-form-item label="文本域" prop="text" labelPosition="left">
           <ex-textarea v-model="formData.text"></ex-textarea>
         </ex-form-item>
-      </ex-form>-->
+      </ex-form>
     </ex-dialog>
   </div>
 </template>
@@ -102,13 +105,32 @@ export default {
     },
     before_close() {
       this.showDialog = false;
+    },
+    success() {
+      this.$message({
+        type: "success",
+        message: "这是一条成功的信息"
+      });
+    },
+    error() {
+      this.$message({
+        type: "error",
+        message: "这是一条错误的信息"
+      });
+    },
+    warn() {
+      this.$message({
+        type: "warn",
+        message: "这是一条警告的信息"
+      });
+    },
+    info() {
+      this.$message({
+        type: "info",
+        message: "这是一条信息提示"
+      });
     }
   }
 };
 </script>
-<style lang="scss" scoped>
-.input {
-  float: left;
-  background: yellow;
-}
-</style>
+<style lang="scss" scoped></style>

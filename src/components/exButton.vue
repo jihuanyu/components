@@ -34,6 +34,7 @@ export default {
   font-weight: 500;
   box-sizing: border-box;
   padding: 0 16px;
+  margin: 5px 10px;
 }
 .ex_button[type="submit"] {
   background: #d4b106;
