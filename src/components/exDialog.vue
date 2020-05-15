@@ -1,7 +1,11 @@
 <template>
   <transition name="fade">
     <div v-if="showSelf" class="dialog" :style="{ 'z-index': zIndex }">
-      <div class="dialog-mark" @click="closeMyself" :style="{ 'z-index': zIndex + 1 }"></div>
+      <div
+        class="dialog-mark"
+        @click="closeMyself"
+        :style="{ 'z-index': zIndex + 1 }"
+      ></div>
 
       <div class="dialog-sprite" :style="{ 'z-index': zIndex + 2 }">
         <!-- 标题 -->

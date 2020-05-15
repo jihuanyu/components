@@ -20,11 +20,12 @@
       </ex-form>
     </div>
     <!-- 按钮 -->
-    <ex-button type="cancel" @click="success">success</ex-button>
-    <ex-button type="cancel" @click="info">info</ex-button>
-    <ex-button type="cancel" @click="error">error</ex-button>
-    <ex-button type="cancel" @click="warn">warn</ex-button>
-    <ex-button @click="handleClick" type="submit">打开弹框</ex-button>
+    <ex-button type="primary" size="medium" @click="success">success</ex-button>
+    <ex-button type="info" size="medium" @click="info">info</ex-button>
+    <ex-button type="error" size="medium" @click="error">error</ex-button>
+    <ex-button type="success" size="medium" @click="warn">warn</ex-button>
+    <ex-button type="ghost" size="medium" @click="warn">warn</ex-button>
+    <ex-button @click="handleClick" type="primary">打开弹框</ex-button>
     <!-- 弹框 -->
     <ex-dialog
       :show="showDialog"
@@ -109,7 +110,10 @@ export default {
     success() {
       this.$exMessage({
         type: "success",
-        message: "这是一条成功的信息"
+        message: "这是一条成功的信息",
+        title: "这是标题",
+        action: "title",
+        duration: 1000
       });
     },
     error() {
@@ -127,7 +131,8 @@ export default {
     info() {
       this.$exMessage({
         type: "info",
-        message: "这是一条信息提示"
+        message: "这是一条信息提示",
+        action: "close"
       });
     }
   }

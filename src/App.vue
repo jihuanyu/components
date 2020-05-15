@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style lang="scss">
-body {
-  background: #111213;
-}
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-input {
-  outline: none;
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
 }
 </style>

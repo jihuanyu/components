@@ -75,4 +75,7 @@
 | :---------: | :------------------------------------: | :-------------: | :--------------------------------------: | :-----: |
 |message|	消息文字|string|—|—|
 |type|	主题|string|success/warning/info/error|—|
+|action|message类型|string|title/close/default|—|
+|title|action为title时的标题|string|—|—|
+|duration|message存在时间|number|—|—|
 

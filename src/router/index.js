@@ -5,9 +5,35 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/components",
+    name: "components",
+    component: () => import("@/layout"),
+    children: [
+      {
+        path: "/button",
+        name: "button",
+        component: () => import("@/views/button.vue")
+      },
+      {
+        path: "/button",
+        name: "button",
+        component: () => import("@/views/button.vue")
+      },
+      {
+        path: "/button",
+        name: "button",
+        component: () => import("@/views/button.vue")
+      },
+      {
+        path: "/button",
+        name: "button",
+        component: () => import("@/views/button.vue")
+      }
+    ]
+  },
+  {
     path: "/",
-    name: "index",
-    component: () => import("@/views/index.vue")
+    redirect: "/components"
   }
 ];
 
